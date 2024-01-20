@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+
 export default function Player({name, symbol}) {
     const [isEditing,setIsEditing]=useState(false);
     const [playerName,setPlayerName]=useState(name);
@@ -22,6 +23,7 @@ export default function Player({name, symbol}) {
             </span>
           </li>
        <button onClick={editPlayer}>{ isEditing ? "Save":"Edit"}</button>
+       
     </>
   );
 }
