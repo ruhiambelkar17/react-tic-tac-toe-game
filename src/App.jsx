@@ -3,6 +3,7 @@ import GameBoard from "./components/GameBoard";
 import { useState } from "react";
 import Log from "./components/Log";
 import { WINNING_COMBINATIONS } from "./winning-combinations";
+import GameOver from "./components/GameOver";
 
 //reducing state managemet and identifying unnecessarcy state
 
@@ -65,7 +66,7 @@ function App() {
           <Player initialName="Player 1" symbol="X" isActive={activePlayer === 'X'}></Player>
           <Player initialName="Player 2" symbol="O" isActive={activePlayer==='O'}></Player>
         </ol>
-        {winner && <p>{winner} won!!</p>}
+        {winner && <GameOver winner={winner}></GameOver>}
         <GameBoard onSelectSquare={handleSelectSquare} board={gameBoard}></GameBoard>
       </div>
       <Log turns={gameTurns}></Log>
